@@ -9,7 +9,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "fastapi (>=0.136.1,<0.137.0)",
-    "uvicorn (>=0.47.0,<0.48.0)"
+    "uvicorn (>=0.47.0,<0.48.0)",
+    "psycopg2-binary (>=2.9.12,<3.0.0)"
 ]
 
 [tool.poetry]
@@ -18,3 +19,15 @@ packages = [{include = "payment_platform", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.15.14,<0.16.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "mypy (>=2.1.0,<3.0.0)",
+    "pytest (>=9.0.3,<10.0.0)"
+]
+
+[tool.black]
+target-version = ["py310"]
+line-length = 88
