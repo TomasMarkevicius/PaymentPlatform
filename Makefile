@@ -2,7 +2,7 @@ install:
 	poetry install
 
 run:
-	poetry run python main.py
+	poetry run uvicorn payment_platform.__main__:app --reload
 
 db:
 	docker exec -it payment-platform-postgres psql -U myuser -d mydatabase

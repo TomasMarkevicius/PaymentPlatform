@@ -16,6 +16,9 @@ dependencies = [
 [tool.poetry]
 packages = [{include = "payment_platform", from = "src"}]
 
+[tool.fastapi]
+entrypoint = "payment_platform.__main__:app"
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
